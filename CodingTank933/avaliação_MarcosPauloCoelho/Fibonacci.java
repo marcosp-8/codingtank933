@@ -10,11 +10,23 @@ public class Fibonacci {
         int[] sequencia = new int[leia.nextInt()];
         leia.close();
 
-        sequencia[0] = 1;
-        sequencia[1] = 1;
-        for (int i = 2; i < sequencia.length; i++) {
-            sequencia[i] = (sequencia[i - 1] + sequencia[i - 2]);
+        if (sequencia.length <= 2) {
+            switch (sequencia.length) {
+                case 1 -> sequencia[0] = 1;
+                case 2 -> {
+                    sequencia[0] = 1;
+                    sequencia[1] = 1;
+                }
+            }
+            System.out.println(Arrays.toString(sequencia));
         }
-        System.out.println(Arrays.toString(sequencia));
+        else {
+            sequencia[0] = 1;
+            sequencia[1] = 1;
+            for (int i = 2; i < sequencia.length; i++) {
+                sequencia[i] = (sequencia[i - 1] + sequencia[i - 2]);
+            }
+            System.out.println(Arrays.toString(sequencia));
+        }
     }
 }
